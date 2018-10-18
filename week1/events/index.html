@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!-- put event listener for any event "x" -->
+    <!-- by setting attribute "onx" -->
+    <div id="one"
+         onclick="clickHandler(event, 'one')">
+         <!-- onmouseover="console.log('hover')"> -->
+        one
+        <div id="two"
+             onclick="clickHandler(event, 'two')">
+            two
+            <div id="three"
+                 onclick="clickHandler(event, 'three')">
+                three
+            </div>
+        </div>
+    </div>
+    <div id="four"
+         onclick="clickHandler(event, 'four')">
+        four
+        <a href="https://google.com" id="link">Link</a>
+    </div>
+
+    <ol id="list">
+
+    </ol>
+
+    <!-- now, in script, document will have -->
+    <!-- all elements in it. -->
+    <!-- <script src="main.js"></script> -->
+</body>
+
+</html>
