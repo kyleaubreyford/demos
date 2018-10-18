@@ -60,6 +60,9 @@ function ajax(url, success, failure) {
 document.addEventListener("DOMContentLoaded", () => {
     let joke = document.getElementById("joke");
     let jokeBtn = document.getElementById("jokeBtn");
+    let jsonText = document.getElementById("inputText");
+    let jsonBtn = document.getElementById("jsonBtn");
+    let jsonOut = document.getElementById("jsonOut");
 
     jokeBtn.addEventListener("click", event => {
         // params: url, success, failure
@@ -73,5 +76,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`Failure, status ${status}`);
             }
         );
+    });
+
+    jsonBtn.addEventListener("click", event => {
+        let json = jsonText.value; // a string
+        try {
+            // convert JSON-format string into JS
+            let data = JSON.parse(json);
+            // now it's an object, or an array, or a number, etc.
+            console.log(data);
+
+            data.name = "Clark";
+            data.innerObj = {};
+
+            let newJson = JSON.stringify(data);
+            jsonOut.innerText = newJson;
+        } catch (err) {
+            // recover from errors thrown in the
+            // middle of the "try" block
+            console.log(err);
+        }
     });
 });
