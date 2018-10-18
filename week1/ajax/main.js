@@ -60,6 +60,7 @@ function ajax(url, success, failure) {
 document.addEventListener("DOMContentLoaded", () => {
     let joke = document.getElementById("joke");
     let jokeBtn = document.getElementById("jokeBtn");
+    let fetchBtn = document.getElementById("jokeFetchBtn");
     let jsonText = document.getElementById("inputText");
     let jsonBtn = document.getElementById("jsonBtn");
     let jsonOut = document.getElementById("jsonOut");
@@ -76,6 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`Failure, status ${status}`);
             }
         );
+    });
+
+    fetchBtn.addEventListener("click", event => {
+        fetch("http://api.icndb.com/jokes/random/")
+            // .json() method returns a Promise
+            // of the response body parsed from JSON
+            .then(res => res.json())
+            .then(data => {
+                joke.innerHTML = data.value.joke;
+            })
+            .catch(err => console.log(err));
     });
 
     jsonBtn.addEventListener("click", event => {
