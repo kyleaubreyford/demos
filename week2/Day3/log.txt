@@ -1,0 +1,52 @@
+2018-10-25 11:23:02 TRACE LoggingLauncher:8 - This is a trace log
+2018-10-25 11:23:02 DEBUG LoggingLauncher:9 - This is a debug log
+2018-10-25 11:23:02 INFO  LoggingLauncher:10 - This is an info log
+2018-10-25 11:23:02 WARN  LoggingLauncher:11 - This is a warn log
+2018-10-25 11:23:02 ERROR LoggingLauncher:12 - This is an error log
+2018-10-25 11:23:02 FATAL LoggingLauncher:13 - Your computer is about to blow up this is fatal
+2018-10-25 11:23:35 TRACE LoggingLauncher:8 - This is a trace log
+2018-10-25 11:23:35 DEBUG LoggingLauncher:9 - This is a debug log
+2018-10-25 11:23:35 INFO  LoggingLauncher:10 - This is an info log
+2018-10-25 11:23:35 WARN  LoggingLauncher:11 - This is a warn log
+2018-10-25 11:23:35 ERROR LoggingLauncher:12 - This is an error log
+2018-10-25 11:23:35 FATAL LoggingLauncher:13 - Your computer is about to blow up this is fatal
+2018-10-25 11:23:49 TRACE LoggingLauncher:8 - This is a trace log
+2018-10-25 11:23:49 DEBUG LoggingLauncher:9 - This is a debug log
+2018-10-25 11:23:49 INFO  LoggingLauncher:10 - This is an info log
+2018-10-25 11:23:49 WARN  LoggingLauncher:11 - This is a warn log
+2018-10-25 11:23:49 ERROR LoggingLauncher:12 - This is an error log
+2018-10-25 11:23:49 FATAL LoggingLauncher:13 - Your computer is about to blow up this is fatal
+2018-10-25 11:24:09 TRACE LoggingLauncher:8 - This is a trace log
+2018-10-25 11:24:09 DEBUG LoggingLauncher:9 - This is a debug log
+2018-10-25 11:24:09 INFO  LoggingLauncher:10 - This is an info log
+2018-10-25 11:24:09 WARN  LoggingLauncher:11 - This is a warn log
+2018-10-25 11:24:09 ERROR LoggingLauncher:12 - This is an error log
+2018-10-25 11:24:09 FATAL LoggingLauncher:13 - Your computer is about to blow up this is fatal
+2018-10-25 11:29:22 DEBUG WaitingThreadLauncher:10 - Creating a thread that will just sleep for 5 seconds
+2018-10-25 11:29:22 DEBUG WaitingThreadLauncher:22 - Creating a thread to wait on the thread that is sleepling
+2018-10-25 11:29:22 TRACE WaitingThreadLauncher:13 - Thread is about to go to sleep for 5 secodns
+2018-10-25 11:29:23 TRACE WaitingThreadLauncher:28 - The state of waitingThread is WAITING
+2018-10-25 11:29:27 DEBUG WaitingThreadLauncher:19 - Thread is done will now be terminated
+2018-10-25 11:29:31 DEBUG WaitingThreadLauncher:10 - Creating a thread that will just sleep for 5 seconds
+2018-10-25 11:29:31 DEBUG WaitingThreadLauncher:22 - Creating a thread to wait on the thread that is sleepling
+2018-10-25 11:29:31 TRACE WaitingThreadLauncher:13 - Thread is about to go to sleep for 5 secodns
+2018-10-25 11:29:32 TRACE WaitingThreadLauncher:28 - The state of waitingThread is WAITING
+2018-10-25 11:29:36 DEBUG WaitingThreadLauncher:19 - Thread is done will now be terminated
+2018-10-25 11:30:02 DEBUG WaitingThreadLauncher:10 - Creating a thread that will just sleep for 5 seconds
+2018-10-25 11:30:02 DEBUG WaitingThreadLauncher:22 - Creating a thread to wait on the thread that is sleepling
+2018-10-25 11:30:02 TRACE WaitingThreadLauncher:13 - Thread is about to go to sleep for 5 secodns
+2018-10-25 11:30:02 TRACE WaitingThreadLauncher:28 - The state of waitingThread is WAITING
+2018-10-25 11:30:07 DEBUG WaitingThreadLauncher:19 - Thread is done will now be terminated
+2018-10-25 14:23:21 TRACE LoggingLauncher:8 - This is a trace log
+2018-10-25 14:23:21 DEBUG LoggingLauncher:9 - This is a debug log
+2018-10-25 14:23:21 INFO  LoggingLauncher:10 - This is an info log
+2018-10-25 14:23:21 WARN  LoggingLauncher:11 - This is a warn log
+2018-10-25 14:23:21 ERROR LoggingLauncher:12 - This is an error log
+2018-10-25 14:23:21 FATAL LoggingLauncher:13 - Your computer is about to blow up this is fatal
+2018-10-25 15:04:27 INFO  Singleton:15 - saving new user
+2018-10-25 16:06:50 DEBUG MathApplicationTests:29 - before any test has run
+2018-10-25 16:06:51 DEBUG MathApplicationTests:34 - runs once before each and every test
+2018-10-25 16:06:51 DEBUG MathApplicationTests:60 - After each and every test
+2018-10-25 16:06:51 DEBUG MathApplicationTests:34 - runs once before each and every test
+2018-10-25 16:06:51 DEBUG MathApplicationTests:60 - After each and every test
+2018-10-25 16:06:51 DEBUG MathApplicationTests:65 - After all tests have been run

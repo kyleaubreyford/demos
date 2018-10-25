@@ -3,7 +3,6 @@ package com.revature.launchers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.revature.beans.Dog;
 import com.revature.util.DogNameComparator;
