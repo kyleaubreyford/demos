@@ -1,0 +1,14 @@
+2018-11-01 10:05:51 DEBUG UserDaoJdbc:21 - finding user with the id 1
+2018-11-01 10:06:22 DEBUG UserDaoJdbc:21 - finding user with the id 1
+2018-11-01 10:07:19 DEBUG UserDaoJdbc:21 - finding user with the id 1
+2018-11-01 10:07:19 TRACE UserDaoJdbc:26 - user found with id 1 attempting to extract result set
+2018-11-01 10:21:14 DEBUG UserDaoJdbc:24 - finding user with the id 1
+2018-11-01 10:21:46 DEBUG UserDaoJdbc:24 - finding user with the id 1
+2018-11-01 10:22:01 DEBUG UserDaoJdbc:24 - finding user with the id 1
+2018-11-01 10:22:01 TRACE UserDaoJdbc:36 - user found with id 1 attempting to extract result set
+2018-11-01 10:22:37 DEBUG UserDaoJdbc:24 - finding user with the id 2
+2018-11-01 10:22:38 TRACE UserDaoJdbc:36 - user found with id 2 attempting to extract result set
+2018-11-01 10:22:50 DEBUG UserDaoJdbc:24 - finding user with the id 3
+2018-11-01 10:22:51 TRACE UserDaoJdbc:36 - user found with id 3 attempting to extract result set
+2018-11-01 10:23:07 DEBUG UserDaoJdbc:24 - finding user with the id 10
+2018-11-01 10:23:07 DEBUG UserDaoJdbc:45 - no users found with the id 10
