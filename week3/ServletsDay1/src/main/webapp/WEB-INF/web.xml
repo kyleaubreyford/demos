@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>ServletsDay1</display-name>
+	<servlet>
+		<servlet-name>MyFirstServlet</servlet-name>
+		<servlet-class>com.revature.servlets.FirstServlet</servlet-class>
+		<init-param> <!-- Servlet config -->
+			<param-name>specifParam</param-name>
+			<param-value>hello</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>FruitServlet</servlet-name>
+		<servlet-class>com.revature.servlets.FruitServlet</servlet-class>
+	</servlet>
+	
+	<context-param> <!-- Servlet context -->
+		<param-name>sharedParam</param-name>
+		<param-value>world</param-value>
+	</context-param>
+	
+	
+	<servlet-mapping>
+		<servlet-name>MyFirstServlet</servlet-name>
+		<url-pattern>/first</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FruitServlet</servlet-name>
+		<url-pattern>/fruits</url-pattern>
+	</servlet-mapping>
+</web-app>
