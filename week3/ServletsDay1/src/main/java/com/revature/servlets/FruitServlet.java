@@ -17,6 +17,18 @@ import com.revature.services.FruitService;
 public class FruitServlet extends HttpServlet {
 
 	private FruitService fs = FruitService.currentImplementation;
+	
+	@Override
+	protected void service(HttpServletRequest arg0, HttpServletResponse resp) throws ServletException, IOException {
+		super.service(arg0, resp);
+		resp.addHeader("Access-Control-Allow-Origin", "*");
+		resp.addHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, HEAD");
+		resp.addHeader("Access-Control-Allow-Headers",
+				"Origin, Methods, Credentials, X-Requested-With, Content-Type, Accept");
+		resp.addHeader("Access-Control-Allow-Credentials", "true");
+		resp.setContentType("application/json");
+		
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
