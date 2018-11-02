@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.revature.services.FruitService;
+
 public class FirstServlet extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("initializing servlet");
-		
+
 		String configParam = config.getInitParameter("specifParam");
 		System.out.println("config param: " + configParam);
 

@@ -1,7 +1,8 @@
 package com.revature.servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,19 +12,36 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.model.Fruit;
+import com.revature.services.FruitService;
 
 public class FruitServlet extends HttpServlet {
+
+	private FruitService fs = FruitService.currentImplementation;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("retreiving all fruit");
-		List<Fruit> fruits = new ArrayList<>();
-		fruits.add(new Fruit(1, "orang", "orange", 9));
-		fruits.add(new Fruit(2, "pear", "greenish", 1));
-		
+		List<Fruit> fruits = fs.findAll();
+
 		ObjectMapper om = new ObjectMapper();
 		String json = om.writeValueAsString(fruits);
 		resp.getWriter().write(json);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		ObjectMapper om = new ObjectMapper();
+		Fruit f = om.readValue(req.getReader(), Fruit.class);
+		
+		int id = fs.save(f);
+		System.out.println(id);
+		
+		resp.setStatus(201);
+		PrintWriter pw = resp.getWriter();
+		pw.write("" + id);
+		pw.flush();
+		
 		
 	}
 
