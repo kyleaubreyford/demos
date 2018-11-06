@@ -1,0 +1,23 @@
+#create-champion-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2em;
+}
+
+@media (min-width: 350px) {
+  #create-champion-form {
+    width: 75%
+  }
+}
+
+@media (min-width: 700px) {
+  #create-champion-form {
+    width: 50%
+  }
+}
+
+#submit-new-champion {
+  margin: auto;
+}

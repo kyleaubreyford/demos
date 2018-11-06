@@ -1,0 +1,8 @@
+.champ-card {
+  max-width: 100%;
+  box-shadow: 10px 11px 22px -1px rgba(255,38,255,0.5);
+}
+
+.champ-col {
+  padding: 0.5em;
+}
