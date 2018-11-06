@@ -1,4 +1,6 @@
-fetch('http://localhost:8080/LeagueOfLegendsApi/champions')
+fetch('http://localhost:8080/LeagueOfLegendsApi/champions', {
+  credentials: 'include'
+})
   .then(resp => resp.json())
   .then(data => {
     const container = document.getElementById('champion-container');
