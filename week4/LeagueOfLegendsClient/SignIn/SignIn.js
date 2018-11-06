@@ -14,7 +14,8 @@ function login(event) {
     body: JSON.stringify(cred),
     headers: {
       'Content-Type': 'application/json'
-    }
+    },
+    credentials: 'include'
   })
     .then(res => {
       if (res.status === 200) {
