@@ -8,6 +8,7 @@
 			<param-name>specifParam</param-name>
 			<param-value>hello</param-value>
 		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
 	<servlet>
@@ -15,19 +16,48 @@
 		<servlet-class>com.revature.servlets.FruitServlet</servlet-class>
 	</servlet>
 	
-	<context-param> <!-- Servlet context -->
-		<param-name>sharedParam</param-name>
-		<param-value>world</param-value>
-	</context-param>
+	<servlet>
+		<servlet-name>ForwardServlet</servlet-name>
+		<servlet-class>com.revature.servlets.ForwardServlet</servlet-class>		
+	</servlet>
 	
+	<servlet>
+		<servlet-name>UsersServlet</servlet-name>
+		<servlet-class>com.revature.servlets.UsersServlet</servlet-class>		
+	</servlet>
+	
+	<servlet>
+		<servlet-name>RedirectServlet</servlet-name>
+		<servlet-class>com.revature.servlets.RedirectServlet</servlet-class>		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UsersServlet</servlet-name>
+		<url-pattern>/users</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ForwardServlet</servlet-name>
+		<url-pattern>/url1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>RedirectServlet</servlet-name>
+		<url-pattern>/redirect</url-pattern>
+	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>MyFirstServlet</servlet-name>
-		<url-pattern>/first</url-pattern>
+		<url-pattern>/first/**</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
 		<servlet-name>FruitServlet</servlet-name>
 		<url-pattern>/fruits</url-pattern>
 	</servlet-mapping>
+	
+	<context-param> <!-- Servlet context -->
+		<param-name>sharedParam</param-name>
+		<param-value>world</param-value>
+	</context-param>
 </web-app>

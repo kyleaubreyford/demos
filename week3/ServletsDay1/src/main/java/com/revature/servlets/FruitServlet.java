@@ -1,6 +1,5 @@
 package com.revature.servlets;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -17,7 +16,7 @@ import com.revature.services.FruitService;
 public class FruitServlet extends HttpServlet {
 
 	private FruitService fs = FruitService.currentImplementation;
-	
+
 	@Override
 	protected void service(HttpServletRequest arg0, HttpServletResponse resp) throws ServletException, IOException {
 		super.service(arg0, resp);
@@ -27,7 +26,7 @@ public class FruitServlet extends HttpServlet {
 				"Origin, Methods, Credentials, X-Requested-With, Content-Type, Accept");
 		resp.addHeader("Access-Control-Allow-Credentials", "true");
 		resp.setContentType("application/json");
-		
+
 	}
 
 	@Override
@@ -39,22 +38,21 @@ public class FruitServlet extends HttpServlet {
 		String json = om.writeValueAsString(fruits);
 		resp.getWriter().write(json);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		ObjectMapper om = new ObjectMapper();
 		Fruit f = om.readValue(req.getReader(), Fruit.class);
-		
+
 		int id = fs.save(f);
 		System.out.println(id);
-		
+
 		resp.setStatus(201);
 		PrintWriter pw = resp.getWriter();
 		pw.write("" + id);
 		pw.flush();
-		
-		
+
 	}
 
 }
