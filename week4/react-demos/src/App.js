@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+
 import { FirstComponent } from './Components/First.component';
 import './Include/bootstrap';
+import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { SecondComponent } from './Components/Second.component';
 import { AppNav } from './Components/Nav.component';

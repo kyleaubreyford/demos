@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.revature.model.TimeTest;
 
 public class DispatcherServlet extends HttpServlet {
 	private Logger log = Logger.getRootLogger();
@@ -32,6 +37,13 @@ public class DispatcherServlet extends HttpServlet {
 			uc.process(req, resp);
 		} else if (uri.startsWith("champions")) {
 			cc.process(req, resp);
+		} else if (uri.startsWith("time")) {
+			ObjectMapper om = new ObjectMapper();
+			om.registerModule(new JavaTimeModule()); // needed to convert from json back to local date time
+			String json = om.writeValueAsString(new TimeTest(LocalDateTime.now()));
+			TimeTest test = om.readValue(json, TimeTest.class);
+			System.out.println(test);
+			resp.getWriter().write(json);
 		} else {
 			resp.setStatus(404);
 		}

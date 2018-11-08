@@ -13,6 +13,19 @@
   color: red;
 }
 
+.pointer { 
+  cursor: pointer;
+}
+
+/*****************************
+flex-box configs
+*****************************/
+.flex-row-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 /*****************************
   NAV
 *****************************/
