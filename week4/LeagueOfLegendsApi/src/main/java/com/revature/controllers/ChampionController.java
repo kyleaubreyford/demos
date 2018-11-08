@@ -46,16 +46,16 @@ public class ChampionController {
 		String[] uriArray = uri.split("/");
 		System.out.println(Arrays.toString(uriArray));
 		if (uriArray.length == 1) {
-			String role = (String) req.getSession().getAttribute("role");
-			if (!"ADMIN".equals(role)) {
-				resp.setStatus(403);
-				return;
-			} else {
+//			String role = (String) req.getSession().getAttribute("role");
+//			if (!"ADMIN".equals(role)) {
+//				resp.setStatus(403);
+//				return;
+//			} else {
 				log.info("retreiving all champions");
 				List<Champion> champions = cs.findAll();
 				ResponseMapper.convertAndAttach(champions, resp);
 				return;
-			}
+//			}
 		} else if (uriArray.length == 2) {
 			try {
 				int id = Integer.parseInt(uriArray[1]);

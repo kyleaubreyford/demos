@@ -13,7 +13,8 @@ function createChampion(e) {
     body: JSON.stringify(champion),
     headers: {
       'Content-Type': 'application/json'
-    }
+    },
+    credentials: 'include'
   }).then(res => res.json())
   .then(data => {
     console.log(data);
