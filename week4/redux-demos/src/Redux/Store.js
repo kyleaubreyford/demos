@@ -3,7 +3,9 @@ import reduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { state } from './Reducers';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_ || compose;
 
 const enhancer = composeEnhancers(
   applyMiddleware(logger, reduxThunk)
