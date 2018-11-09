@@ -5,7 +5,7 @@ import { state } from './Reducers';
 
 
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_ || compose;
+const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
 
 const enhancer = composeEnhancers(
   applyMiddleware(logger, reduxThunk)
