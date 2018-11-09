@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RevLogo from '../Assets/rev-logo.png';
-export class AppNav extends React.Component {
+import { connect } from 'react-redux';
+import {FaHandScissors} from 'react-icons/fa'
+
+export class AppNav extends React.PureComponent {
   render() {
     return (
       <div>
@@ -10,7 +13,9 @@ export class AppNav extends React.Component {
             <Link to="/home" className="unset-anchor">
               <img className="img-adjust-position rev-logo" src={RevLogo} alt="revature" />
             </Link>
+            {this.props.clicks}<FaHandScissors />
           </div>
+
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -58,3 +63,11 @@ export class AppNav extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    clicks: state.clicker.clicks
+  }
+}
+
+export default connect(mapStateToProps, {})(AppNav);

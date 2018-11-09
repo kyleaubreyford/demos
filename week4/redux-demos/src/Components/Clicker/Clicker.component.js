@@ -1,45 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export class ClickerComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    // only do this in constructor to initialize state
-    this.state = {
-      multiplier: 1,
-      clicks: 25
-    }
-  }
+import * as clickerActions from '../../Redux/Actions/Clicker.actions';
 
-  increment = () => {
-    const { clicks, multiplier } = this.state;
-    // use set state everywhere other than constructor
-    this.setState({
-      ...this.state,
-      clicks: clicks + multiplier
-    })
-  }
-
-  increaseMultiplier = () => {
-    this.setState({
-      clicks: this.state.clicks - 5,
-      multiplier: this.state.multiplier + 1
-    })
-  }
+export class ClickerComponent extends React.PureComponent {
 
   render() {
-    const { clicks } = this.state;
+    const { clicks } = this.props.clicker;
     return (
       <>
         <div className={(clicks % 5 === 0) ? 'blue': 'red'}>
           Clicks: {clicks}
         </div>
-        <button className="btn btn-primary" onClick={this.increment} >Increment</button>
+        <button className="btn btn-primary" onClick={this.props.increment} >Increment</button>
         {
           (clicks >= 5) && (
-            <button className="btn btn-success" onClick={this.increaseMultiplier}>Add 1 to multiplier </button>
+            <button className="btn btn-success" onClick={()=>this.props.increaseMultiplier(1, 5)}>Add 1 to multiplier </button>
           )
         }
       </>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    clicker: state.clicker
+  }
+}
+ 
+const mapDispatchToProps = {
+  increment: clickerActions.increment,
+  increaseMultiplier: clickerActions.increaseMultiplier
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClickerComponent)
