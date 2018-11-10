@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChampionCardComponent } from '../ChampionCard/ChampionCard.component';
+import LeagueClient from '../../AxiosClients/LeagueClient';
 
 export class ViewChampionsComponent extends React.Component {
 
@@ -40,18 +41,14 @@ export class ViewChampionsComponent extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/LeagueOfLegendsApi/champions', {
-      credentials: 'include'
-    })
-      .then(resp => resp.json())
-      .then(data => {
+    LeagueClient.get('champions')
+      .then(resp => {
         this.setState({
-          champions: data
+          champions: resp.data
         })
-
-        // doing this instead of replacing state will not cause a rerender
-        // this.state.champions.push(data[0]);
-        // console.log(this.state.champions)
+      })
+      .catch(err => {
+        console.log(err);
       });
   }
 

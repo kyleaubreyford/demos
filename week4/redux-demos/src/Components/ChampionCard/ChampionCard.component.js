@@ -28,7 +28,8 @@ ChampionCardComponent.propTypes = {
   champion: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired
+    role: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired
   }),
   removeChampion: PropTypes.func.isRequired
 }

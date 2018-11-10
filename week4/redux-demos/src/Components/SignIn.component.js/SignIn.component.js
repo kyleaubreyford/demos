@@ -1,4 +1,5 @@
 import React from 'react';
+import LeagueClient from '../../AxiosClients/LeagueClient';
 
 export class SignInComponent extends React.Component {
   constructor(props) {
@@ -27,18 +28,9 @@ export class SignInComponent extends React.Component {
   submit = (e) => {
     e.preventDefault();
     let cred = this.state;
-    fetch('http://localhost:8080/LeagueOfLegendsApi/users/login', {
-      method: 'POST',
-      body: JSON.stringify(cred),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      credentials: 'include'
-    })
+    LeagueClient.post('users/login', cred)
       .then(res => {
-        if (res.status === 200) {
           this.props.history.push('/view-champions');
-        }
       })
       .catch(err => {
         console.log(err);
