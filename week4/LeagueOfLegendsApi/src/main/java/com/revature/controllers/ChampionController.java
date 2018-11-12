@@ -45,7 +45,7 @@ public class ChampionController {
 		uri = uri.substring(context.length() + 2, uri.length());
 		String[] uriArray = uri.split("/");
 		System.out.println(Arrays.toString(uriArray));
-		if (uriArray.length == 1) {
+		if (uriArray.length == 1) { // /champions
 			String role = (String) req.getSession().getAttribute("role");
 			if (!"ADMIN".equals(role)) {
 				resp.setStatus(403);
@@ -56,7 +56,7 @@ public class ChampionController {
 				ResponseMapper.convertAndAttach(champions, resp);
 				return;
 			}
-		} else if (uriArray.length == 2) {
+		} else if (uriArray.length == 2) { // /champions/{id}
 			try {
 				int id = Integer.parseInt(uriArray[1]);
 				log.info("retreiving champion with id: " + id);
@@ -67,13 +67,13 @@ public class ChampionController {
 				resp.setStatus(400);
 				return;
 			}
-		} else if (uriArray.length == 3 && uriArray[1].equals("role")) {
+		} else if (uriArray.length == 3 && uriArray[1].equals("role")) { // /champions/role/{role}
 			String role = uriArray[2];
 			log.info("finding all champions with role: " + role);
 			List<Champion> champions = cs.findAllByRole(role);
 			ResponseMapper.convertAndAttach(champions, resp);
 			return;
-		} else if (uriArray.length == 3 && uriArray[1].equals("name")) {
+		} else if (uriArray.length == 3 && uriArray[1].equals("name")) { // /champions/name/{name}
 			String name = uriArray[2];
 			log.info("finding champion with the name: " + name);
 			Champion c = cs.findByName(name);
