@@ -17,6 +17,7 @@ import ChuckNorrisComponent from './Components/ChuckNorris/ChuckNorris.component
 import { NestedComponent } from './Components/Nested/Nested.component';
 import { TicTacComponent } from './Components/TicTac/TicTac.component';
 import { store } from './Redux/Store';
+import { Routes } from './Routes';
 
 class App extends Component {
   render() {
@@ -25,23 +26,7 @@ class App extends Component {
         <BrowserRouter>
           <>
             <AppNav />
-            <div id="main-content-container">
-              <Switch>
-                <Route path="/first" component={FirstComponent} />
-                <Route path="/second" component={SecondComponent} />
-                <Route path="/view-champions" component={ViewChampionsComponent} />
-                <Route path="/home" component={HomeComponent} />
-                <Route path="/sign-in" component={SignInComponent} />
-                <Route path="/clicker" component={ClickerComponent} />
-                <Route path="/add-champion" component={CreateChampionComponent} />
-                <Route path="/chuck-norris" component={ChuckNorrisComponent} />
-                <Route path="/nested" component={NestedComponent} />
-                <Route path="/tic-tac-toe" component={TicTacComponent} />
-
-                {/* default */}
-                <Route component={FourOFourComponent} />
-              </Switch>
-            </div>
+            <Routes />
           </>
         </BrowserRouter>
       </Provider >

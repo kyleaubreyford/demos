@@ -9,13 +9,13 @@ export class ClickerComponent extends React.PureComponent {
     const { clicks } = this.props.clicker;
     return (
       <>
-        <div className={(clicks % 5 === 0) ? 'blue': 'red'}>
+        <div id="clicker-display" className={(clicks % 5 === 0) ? 'blue': 'red'}>
           Clicks: {clicks}
         </div>
-        <button className="btn btn-primary" onClick={this.props.increment} >Increment</button>
+        <button id="increment-button" className="btn btn-primary" onClick={this.props.increment} >Increment</button>
         {
           (clicks >= 5) && (
-            <button className="btn btn-success" onClick={()=>this.props.increaseMultiplier(1, 5)}>Add 1 to multiplier </button>
+            <button id="multiplier-button" className="btn btn-success" onClick={()=>this.props.increaseMultiplier(1, 5)}>Add 1 to multiplier </button>
           )
         }
       </>
