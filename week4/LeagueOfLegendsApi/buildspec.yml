@@ -3,7 +3,7 @@ version: 0.2
 phases:
   post_build:
     commands:
-      - mvn package
+      - cd week4/LeagueOfLegendsApi && mvn package
 artifacts:
   files:
     - 'week4/LeagueOfLegendsApi/target/LeagueOfLegendsApi.war'
