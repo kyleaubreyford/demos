@@ -45,7 +45,7 @@ public class DispatcherServlet extends HttpServlet {
 			System.out.println(test);
 			resp.getWriter().write(json);
 		} else if(uri.startsWith("test")) {
-			resp.getWriter.write("test");
+			resp.getWriter().write("test");
 		} else {
 			resp.setStatus(404);
 		}
