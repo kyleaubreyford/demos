@@ -44,6 +44,8 @@ public class DispatcherServlet extends HttpServlet {
 			TimeTest test = om.readValue(json, TimeTest.class);
 			System.out.println(test);
 			resp.getWriter().write(json);
+		} else if(uri.startsWith("test")) {
+			resp.getWriter.write("test");
 		} else {
 			resp.setStatus(404);
 		}
